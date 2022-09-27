@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="student" class="pojo.Student">
+        <property name="sid" value="1001"></property>
+        <property name="age" value="23"></property>
+        <property name="sname" value="张三"></property>
+        <property name="gender" value="男"></property>
+    </bean>
+
+    <bean id="studentTwo" class="pojo.Student">
+        <property name="sid">
+            <null></null>
+        </property>
+    </bean>
+
+    <!--类类型属性赋值-->
+    <!--数组类型属性赋值-->
+    <bean id="studentThree" class="pojo.Student">
+        <property name="sid" value="1002"></property>
+        <property name="age" value="22"></property>
+        <property name="sname" value="李四"></property>
+        <property name="gender" value="男"></property>
+        <property name="clazz" ref="clazzOne"></property>
+        <property name="hobby">
+            <array>
+                <value>Java</value>
+                <value>cpp</value>
+                <value>python</value>
+            </array>
+        </property>
+
+    </bean>
+
+    <bean id="clazzOne" class="pojo.Clazz">
+        <property name="cid" value="101"></property>
+        <property name="cname" value="小明"></property>
+        <property name="students">
+            <list>
+                <value>student</value>
+            </list>
+        </property>
+    </bean>
+
+
+
+
+</beans>
